@@ -1,0 +1,26 @@
+<div class="container text-center mt-5">
+  <div class="row">
+    <!-- Time In button (left) -->
+    <div class="col">
+      <button class="btn btn-success btn-lg" ng-click="vm.timeIn()">Time In</button>
+    </div>
+
+    <!-- Current Time (middle) -->
+    <div class="col">
+      <h1>{{ vm.currentTime | date:'mediumTime' }}</h1>{{title}}
+    </div>
+
+    <!-- Time Out button (right) -->
+    <div class="col">
+      <button class="btn btn-danger btn-lg" ng-click="vm.timeOut()">Time Out</button>
+    </div>
+  </div>
+
+  <!-- Optional: Display logs -->
+  <div class="mt-4">
+    <h4>Logs:</h4>
+    <ul>
+      <li ng-repeat="log in vm.logs track by $index">{{ log }}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="login-page">
+  <div class="login-box">
+    <!-- 🔹 Add the Attendance Tracker heading -->
+    <h1 class="login-title">Attendance Tracker</h1>
+    
+    <h2>Login</h2>
+    <form ng-submit="vm.login()">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" ng-model="vm.username" placeholder="Enter username" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" ng-model="vm.password" placeholder="Enter password" required>
+      </div>
+      
+      <button type="submit">Login</button>
+      <p class="error-message" ng-if="vm.error">{{ vm.error }}</p>
+    </form>
+  </div>
+</div>

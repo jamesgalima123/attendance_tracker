@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS MVVM Example</title>
+  <link rel="stylesheet" href="app/assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+
+  <!--EXTERNAL LIBRARIES-->
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+  <!--BOOSTRAP-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- App initialization -->
+  <script src="app/app.module.js"></script>
+  <script src="app/app.routes.js"></script>
+
+  <!-- Models -->
+  <script src="app/models/item.service.js"></script>
+  <script src="app/models/user.service.js"></script>
+
+  <!-- ViewModels -->
+  <script src="app/viewmodels/main.controller.js"></script>
+  <script src="app/viewmodels/login.controller.js"></script>
+  <script src="app/viewmodels/root.controller.js"></script>
+<!--NAVBAR-->
+  <div ng-include="'app/views/templates/navbar.html'" ng-if="!root.isLoginPage"></div>
+
+
+
+</head>
+<body ng-controller="RootController as root">
+      <div ng-view></div>
+</body>
+</html>
