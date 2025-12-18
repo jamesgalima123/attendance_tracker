@@ -1,3 +1,4 @@
+<br>
 <div class="container text-center mt-5">
   <div class="row">
     <!-- Time In button (left) -->
@@ -17,10 +18,57 @@
   </div>
 
   <!-- Optional: Display logs -->
-  <div class="mt-4">
+  <!-- <div class="mt-4">
     <h4>Logs:</h4>
     <ul>
       <li ng-repeat="log in vm.logs track by $index">{{ log }}</li>
     </ul>
-  </div>
+  </div> -->
+</div>
+<div class="container-fluid p-4">
+
+    <!-- Header -->
+    <div class="d-flex align-items-center mb-4">
+        <span class="me-2 fs-4">📅</span>
+        <h4 class="m-0">My Time Sheet</h4>
+    </div>
+
+    <!-- Date Range & Button Row -->
+    <div class="d-flex align-items-center mb-3 flex-wrap">
+        <strong class="me-2">Date Range:</strong>
+        <input id="dateRange" class="form-control form-control-sm w-auto me-3">
+        <button class="btn btn-sm btn-primary me-2">Refresh</button>
+    </div>
+
+    <!-- Table of attendance -->
+    <div class="table-wrapper bg-white border rounded p-2">
+        <table class="table table-sm table-bordered align-middle">
+            <thead class="table-light">
+            <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Basic Hours</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <!-- SAMPLE ROWS (just examples) -->
+            <tr ng-repeat="timeLog in vm.timeLogs track by $index">
+                <td>{{timeLog.log | date:"yyyy-MM-dd"}}</td>
+                <td>{{timeLog.log | date:"EEEE"}}</td>
+                <td>{{timeLog.log | date:"hh:mm a"}}</td>
+                <td>{{timeLog.log | date:"hh:mm a"}}</td>
+                <td>8</td>
+            </tr>
+
+       
+
+            <!-- Add the rest of your rows here -->
+            </tbody>
+
+        </table>
+    </div>
+
 </div>

@@ -1,0 +1,169 @@
+<style>
+    .profile-sidebar {
+    background-color: #2196F3;
+    color: white;
+    }
+    .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    }
+    .profile-role {
+    color: rgba(255, 255, 255, 0.7);
+    }
+    .hr-light {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .info-section-title {
+    background-color: #f1f1f1;
+    border-left: 5px solid #2196F3;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #666;
+    }
+</style>
+<ifx-navbar  show-logo-and-appname="true" application-name="Attendance Tracker" fixed="true" logo-href="#" logo-href-target="_self">
+  <ifx-navbar-item icon="undefined" slot="left-item" target="_self" href="" hide-on-mobile="true">
+    Menu Item
+    <ifx-navbar-item icon="">
+      Layer 1 Nested Item 1
+      <ifx-navbar-item>
+        Layer 2 Nested Item 2
+        <ifx-navbar-item href="http://google.com" target="_blank">Link Layer 3 Nested Item 1</ifx-navbar-item>
+        <ifx-navbar-item>Layer 3 Nested Item 2</ifx-navbar-item>
+        <ifx-navbar-item>Layer 3 Nested Item 3</ifx-navbar-item>
+        <ifx-navbar-item>Layer 3 Nested Item 4</ifx-navbar-item>
+      </ifx-navbar-item>
+      <ifx-navbar-item >Layer 2 Nested Item 3</ifx-navbar-item>
+      <ifx-navbar-item>Layer 2 Nested Item 4</ifx-navbar-item>
+      <ifx-navbar-item>Layer 2 Nested Item 5</ifx-navbar-item>
+    </ifx-navbar-item>
+
+    <ifx-navbar-item>
+      Layer 1 Nested Item 2
+      <ifx-navbar-item>Layer 2 Item 1</ifx-navbar-item>
+      <ifx-navbar-item>Layer 2 Item 2</ifx-navbar-item>
+      <ifx-navbar-item>Layer 2 Item 3</ifx-navbar-item>
+    </ifx-navbar-item>
+
+    <ifx-navbar-item>Nested Item 3</ifx-navbar-item>
+
+    <ifx-navbar-item>
+      Layer 1 Nested Item 4
+      <ifx-navbar-item>Nested Item 4</ifx-navbar-item>
+    </ifx-navbar-item>
+
+  </ifx-navbar-item>
+
+  <ifx-navbar-item href="" target="_self" slot="left-item" icon="" show-label="true">
+    Menu Item
+  </ifx-navbar-item>
+
+  <ifx-navbar-item slot="left-item">
+    More
+    <ifx-navbar-item>Item1</ifx-navbar-item>
+    <ifx-navbar-item>Item2</ifx-navbar-item>
+  </ifx-navbar-item>
+
+  <!-- <ifx-search-bar slot="search-bar-left" is-open="false"></ifx-search-bar> -->
+  <ifx-navbar-profile data-bs-toggle="modal" data-bs-target="#profileModal" user-name={{root.user.fullname}} slot="right-item" image-url="" show-label="true" href="" target="_self" alt="profile image"></ifx-navbar-profile>
+
+  <ifx-navbar-item ng-click="root.logOut()" number-indicator="" slot="right-item" target="_blank" hide-on-mobile="true" show-label="false" icon="logout16" >
+  </ifx-navbar-item>
+
+
+</ifx-navbar>
+
+<!--profile modal-->
+<!-- Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">Profile</h5>
+        <ifx-icon  data-bs-dismiss="modal" icon="cRemoveF16" class="has-pointer"></ifx-icon>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body p-0">
+        <div class="container-fluid">
+          <div class="row g-0">
+
+            <!-- Sidebar -->
+            <div class="col-md-4 profile-sidebar d-flex flex-column align-items-center justify-content-start min-vh-100">
+              <br>
+              <div class="profile-picture"></div>
+              <h5 class="fw-bold text-uppercase">GALIMA, CZARELLE JAMES D.</h5>
+              <p class="profile-role mb-3">.NET Developer</p>
+              <hr class="hr-light w-75">
+              <p class="mb-1">
+                <i class="bi bi-envelope"></i> czarilleg@phildata.com
+              </p>
+              <p class="mb-3">
+                <i class="bi bi-telephone"></i> 09624992971
+              </p>
+              <a href="#" class="btn btn-outline-light rounded-pill">Download Profile</a>
+            </div>
+
+            <!-- Main Content -->
+            <div id="info-body" class="col-md-8 p-4">
+              <!-- Employment Information -->
+              <div class="info-section-title">Employment Information</div>
+              <div class="row mt-2">
+                <div class="col-5 fw-bold">Branch</div>
+                <div class="col-7">Makati</div>
+                <div class="col-5 fw-bold">Date Hired</div>
+                <div class="col-7">November 18, 2025</div>
+                <div class="col-5 fw-bold">Date Regular</div>
+                <div class="col-7">N/A</div>
+                <div class="col-5 fw-bold">Department</div>
+                <div class="col-7">MANAGED SERVICES GROUP</div>
+                <div class="col-5 fw-bold">Division</div>
+                <div class="col-7">CUSTOMER SUPPORT DIVISION</div>
+                <div class="col-5 fw-bold">Employment Tenure</div>
+                <div class="col-7">29 days</div>
+                <div class="col-5 fw-bold">Employment Type</div>
+                <div class="col-7">Project-based</div>
+                <div class="col-5 fw-bold">Immediate Superior</div>
+                <div class="col-7">GALIMA, ANGELICA R.</div>
+                <div class="col-5 fw-bold">Team</div>
+                <div class="col-7">—</div>
+                <div class="col-5 fw-bold">Work Location</div>
+                <div class="col-7">MUNTINLUPA</div>
+              </div>
+
+              <!-- Personal Information -->
+              <div class="info-section-title mt-4">Personal Information</div>
+              <div class="row mt-2">
+                <div class="col-5 fw-bold">Civil Status</div>
+                <div class="col-7">Single</div>
+                <div class="col-5 fw-bold">Date of Birth</div>
+                <div class="col-7">April 17, 2000</div>
+                <div class="col-5 fw-bold">Gender</div>
+                <div class="col-7">Male</div>
+                <div class="col-5 fw-bold">Mobile Number</div>
+                <div class="col-7">09624992971</div>
+                <div class="col-5 fw-bold">Email Address</div>
+                <div class="col-7">czarilleg@phildata.com</div>
+                <div class="col-5 fw-bold">Home Address</div>
+                <div class="col-7">F. REYES, GENERAL MARIANO ALVAREZ, CAVITE</div>
+                <div class="col-5 fw-bold">PAG-IBIG Number</div>
+                <div class="col-7">1212-2613-9720</div>
+                <div class="col-5 fw-bold">PhilHealth ID Number</div>
+                <div class="col-7">08-026456311-2</div>
+                <div class="col-5 fw-bold">SSS ID Number</div>
+                <div class="col-7">34-7592471-8</div>
+                <div class="col-5 fw-bold">TIN ID</div>
+                <div class="col-7">—</div>
+              </div>
+
+              <!-- Emergency Contact -->
+              <div class="info-section-title mt-4">In case of emergency</div>
+              <p class="fw-bold mt-2 mb-1">ELLEN DELA CRUZ</p>
+              <small>Address: F. REYES, GENERAL MARIANO ALVAREZ, CAVITE</small>
+            </div>
+
+</div>

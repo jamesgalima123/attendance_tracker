@@ -9,7 +9,7 @@ angular.module('myApp')
         if(token){
             try{
                 UserService.init(token);
-                root.user = {'fullname':UserService.getFullName()};
+                root.user = {'fullname':UserService.getFullName(),'role_title':UserService.getRoleTitle()};
                 if($location.path() === '/login'){
                     $location.path('/home')
                 }
@@ -23,7 +23,11 @@ angular.module('myApp')
         root.isLoginPage = ($location.path() === '/login');
     }
     root.logOut = function(){
-        alert('test');
+        localStorage.clear();
+        $location.path('/login');
+    };
+    root.profile = function(){
+        $location.path('/profile');
     };
     // Listen for route changes and update
     $scope.$on('$routeChangeSuccess', function() {

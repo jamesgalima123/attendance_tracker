@@ -1,5 +1,5 @@
 <div class="login-page">
-  <div class="login-box">
+<ifx-card direction="vertical" href="" target="_blank" aria-label="Card">
     <!-- 🔹 Add the Attendance Tracker heading -->
     <h1 class="login-title">Attendance Tracker</h1>
     
@@ -15,8 +15,10 @@
         <input type="password" ng-model="vm.password" placeholder="Enter password" required>
       </div>
       
-      <button type="submit">Login</button>
+      <ifx-button type="submit" aria-label="Button" disabled="false" variant="primary" size="m" target="_blank" theme="default"  full-width="true">
+        Button 
+      </ifx-button>
       <p class="error-message" ng-if="vm.error">{{ vm.error }}</p>
     </form>
-  </div>
+  </ifx-card>
 </div>
